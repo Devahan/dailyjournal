@@ -301,7 +301,7 @@ include "koneksi.php";
                             <div class="row align-items-center">
                                 <!-- Photo Section -->
                                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                                    <img src="Foto_profile.png" alt="Profile Photo" class="rounded-circle border border-5 border-primary shadow" width="200" height="200">
+                                    <img src="img/Foto_profile.png" alt="Profile Photo" class="rounded-circle border border-5 border-primary shadow" width="200" height="200">
                                 </div>
                                 
                                 <!-- Info Section -->
