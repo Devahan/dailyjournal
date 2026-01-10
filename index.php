@@ -6,7 +6,11 @@ include "koneksi.php";
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <title>Hysilens</title>
+=======
+    <title>Latihan bootstrap</title>
+>>>>>>> 47dc301c22cd829be4d8c6a5783bfb67e4118104
     <link rel="icon" href="img/vergil logo.jpg">
     <link 
       rel="stylesheet" 
