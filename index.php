@@ -6,8 +6,8 @@ include "koneksi.php";
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Latihan bootstrap</title>
-    <link rel="icon" href="vergil logo.jpg">
+    <title>Hysilens</title>
+    <link rel="icon" href="img/vergil logo.jpg">
     <link 
       rel="stylesheet" 
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -64,7 +64,7 @@ include "koneksi.php";
     <section id="hero" class="text-center p-5 bg-secondary-subtle text-sm-start">
       <div class="container">
         <div class="d-sm-flex flex-sm-row-reverse align-items-center">
-            <img src="Trigger.png" class="img-fluid" width="300">
+            <img src="img/Trigger.png" class="img-fluid" width="300">
             <div>
               <h1 class="fw-bold display-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora quam.</h1>
               <h4 class="lead display-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora quam.</h4>
@@ -114,39 +114,67 @@ include "koneksi.php";
 </section>
 <!-- article end -->
     <!-- gallery begin -->
-    <section id="gallery" class="text-center p-5 bg-secondary-subtle">
-        <div class="container">
-            <h1 class="fw-bold display-4 pb-3">gallery</h1>
-        <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="gambar 1.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="vergil pranowo.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="gambar 2.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="Trigger.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="gambar 1.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+
+<section id="gallery" class="text-center p-5 bg-secondary-subtle">
+
+    <div class="container">
+
+        <h1 class="fw-bold display-4 pb-3">Gallery</h1>
+
+        <?php
+
+        $sql = "SELECT * FROM gallery ORDER BY tanggal DESC";
+
+        $hasil = $conn->query($sql);
+
+        $active = true;
+
+        ?>
+
+        <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <?php while ($row = $hasil->fetch_assoc()) { ?>
+
+                    <div class="carousel-item <?= $active ? 'active' : '' ?>">
+
+                        <img src="img/<?= $row['gambar'] ?>" 
+
+                             class="d-block w-100"
+
+                             alt="gallery">
+
+                    </div>
+
+                <?php 
+
+                    $active = false;
+
+                } ?>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"></span>
+
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"></span>
+
+            </button>
+
         </div>
-    </section>
-    <!-- gallery end -->
+
+    </div>
+
+</section>
+
+<!-- gallery end -->
+  
 
     <!-- schedule begin -->
     <section id="schedule" class="text-center p-5">
